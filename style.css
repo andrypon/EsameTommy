@@ -1,0 +1,271 @@
+/* =============================================
+   VARIABILI — cambia questi valori per
+   ridisegnare l'intero sito in un colpo solo
+   ============================================= */
+:root {
+  --colore-primario:   #2563eb;   /* blu principale */
+  --colore-testo:      #1a1a1a;   /* quasi nero */
+  --colore-sfondo:     #ffffff;   /* bianco */
+  --colore-grigio:     #f4f4f5;   /* sfondo sezioni alternate */
+  --colore-highlight:  #31d82b;   /* colore del testo evidenziato */
+
+  --font-titoli: 'Georgia', serif;
+  --font-testo:  'Helvetica Neue', Arial, sans-serif;
+
+  --raggio:      8px;             /* arrotondamento bordi */
+  --max-width:   900px;           /* larghezza massima del contenuto */
+}
+
+
+/* =============================================
+   RESET BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;        /* scrolla morbidamente ai link interni */
+}
+
+body {
+  font-family: var(--font-testo);
+  color: var(--colore-testo);
+  background: var(--colore-sfondo);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+
+/* =============================================
+   UTILITÀ
+   ============================================= */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.testo-centrato {
+  text-align: center;
+}
+
+.sfondo-grigio {
+  background: var(--colore-grigio);
+}
+
+.highlight {
+  color: var(--colore-highlight);
+}
+
+
+/* =============================================
+   TIPOGRAFIA
+   ============================================= */
+h1, h2, h3 {
+  font-family: var(--font-titoli);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+a {
+  color: var(--colore-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================================
+   HEADER
+   ============================================= */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--colore-sfondo);
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-titoli);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--colore-testo);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--colore-testo);
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--colore-primario);
+  text-decoration: none;
+}
+
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero .sottotitolo {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.pulsanti{
+  margin: 50;
+}
+
+
+/* =============================================
+   BOTTONE
+   ============================================= */
+.bottone {
+  background: var(--colore-primario);
+  color: #fff;
+  padding-bottom: auto;
+  padding-top: auto;
+  border-radius: var(--raggio);
+  font-size: 1rem;
+  transition: opacity 0.2s;
+  width:100%;
+  height: 10rem;
+  text-align: center;
+  padding-top: 3rem;
+  font-size:40px ;
+}
+
+.storia{
+  background-image: url('immagini/storiaimg.jpg');
+}
+.InglesePotenziato{
+  background-image: url('immagini/Ingimg.jpg');
+}
+.Tecnologia{
+  background-image: url('immagini/tecimg.jpg');
+}
+.Arte{
+  background-image: url('immagini/arteimg.avif');
+}
+.Geografia{
+  background-image: url('immagini/geoimg.jpg');
+}
+.EducazioneCivica{
+  background-image: url('immagini/edcimg.jpg');
+}
+.Scienze{
+  background-image: url('immagini/sciimg.png');
+}
+.Musica{
+  background-image: url('immagini/musimg.jpg');
+}
+
+
+.pulsanti{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bottone:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+
+/* =============================================
+   SEZIONI
+   =============================================*/ 
+.section {
+  padding: 5rem 0;
+}
+
+
+/* =============================================
+   GRIGLIA CARD
+   ============================================= */
+.griglia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: var(--colore-sfondo);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--raggio);
+  padding: 2rem 1.5rem;
+}
+
+.card .icona {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--colore-primario);
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: var(--colore-testo);
+  color: #aaa;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+footer p {
+  color: #aaa;
+  margin: 0;
+}
+
+
+/* =============================================
+   RESPONSIVE — schermi piccoli
+   ============================================= */
+@media (max-width: 600px) {
+  nav {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+}
